@@ -10,9 +10,9 @@ Przykładowa aplikacja jest aplikacją z interfejsem webowym. Do swojego działa
 
 
 Aplikacja składa się z nastepujących elementów:
-*service.js - komponent implementujący usługę WWW.
-*app.js - komponent reprezentujący aplikację, punkt startowy aplikacji
-*helpers.js - funkcje pomocnicze.
+* service.js - komponent implementujący usługę WWW.
+* app.js - komponent reprezentujący aplikację, punkt startowy aplikacji
+* helpers.js - funkcje pomocnicze.
 
 
 #3. Wykonywanie ćwiczeń laboratoryjnych
