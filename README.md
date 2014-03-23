@@ -4,20 +4,20 @@ awslab
 # 1. Opis
 
 
-Przykładowa aplikacja jest aplikacją z interfejsem webowym. Do swojego działania wykorzystuje platformę nodeJS (http://nodejs.org/) oraz framework express.js (http://expressjs.com/).
+Przykładowa aplikacja jest posiada interfejs webowy. Do swojego działania wykorzystuje platformę nodeJS (http://nodejs.org/) oraz framework express.js (http://expressjs.com/).
 
 # 2. Architektura
 
 
 Aplikacja składa się z nastepujących elementów:
-* service.js - komponent implementujący usługę WWW.
+* lib/service.js - komponent implementujący usługę WWW.
 * app.js - komponent reprezentujący aplikację, punkt startowy aplikacji
 * helpers.js - funkcje pomocnicze.
 
 
 #3. Wykonywanie ćwiczeń laboratoryjnych
 
-Ćwiczenie laboratoryjne wymaga uwtorzenia modułu (w postaci nowego pliku źródłowego) oraz zaimportowania go do pliku app.js. W ramach nowego modułu, należy zdefiniować funkcję o następującej strukturze:
+Ćwiczenie laboratoryjne wymaga uwtorzenia modułu (w postaci nowego pliku źródłowego w folderze /lab ) oraz zaimportowania go do pliku app.js. W ramach nowego modułu, należy zdefiniować funkcję o następującej strukturze:
 
 ```JavaScript
 function(request, callback) {/*...*/}
