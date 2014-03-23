@@ -1,4 +1,4 @@
-var hash = require("./helpers").hash;
+var hash = require("../helpers").hash;
 var async = require("async");
 
 var digest = function(method, doc, loopCount, callback) {
