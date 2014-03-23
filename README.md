@@ -4,7 +4,7 @@ awslab
 # 1. Opis
 
 
-Przykładowa aplikacja jest posiada interfejs webowy. Do swojego działania wykorzystuje platformę nodeJS (http://nodejs.org/) oraz framework express.js (http://expressjs.com/).
+Przykładowa aplikacja posiada interfejs webowy. Do swojego działania wykorzystuje platformę nodeJS (http://nodejs.org/) oraz framework express.js (http://expressjs.com/).
 
 # 2. Architektura
 
@@ -27,7 +27,7 @@ gdzie:
 
 * request - obiekt reprezentujacy request HTTP (patrz: http://expressjs.com/api.html#req)
 
-* callback - funkcja 'callback' pozwalajaca na zwrócenie rezultatu. Sygnatura funkcji zgodna jest z konwencją platformy nodeJS (pierwszy paramter zarezerwowany jest na opcjonalny obiekt reprezentujacy błąd), np: callback(err) - wywołanie sygnalizujące wystapienie błędu callback(null, data) - wywołanie zwracające poprawny rezultat
+* callback - funkcja 'callback' pozwalajaca na zwrócenie rezultatu. Sygnatura funkcji zgodna jest z konwencją platformy nodeJS (pierwszy paramter zarezerwowany jest na opcjonalny obiekt reprezentujacy błąd), np: callback(err) - wywołanie sygnalizujące wystapienie błędu callback(null, data) - wywołanie zwracające poprawny rezultat.
 
 Aby aplikacja posiadał nową funkcjonalność musi być ona zmapowana do okreslonej ścieżki webowej. W tym celu należy, po zaimportowaniu modułu do aplikacji dodać do tablicy *urlMap* nowy obiekt o strukturze *{path: ścieżka, action: akcja}*. 
 
