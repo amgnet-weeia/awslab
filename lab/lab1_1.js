@@ -43,7 +43,7 @@ var task =  function(request, callback){
 							
 		}
 		queueForAlgorithms.drain = function(){		
-			callback(null, digests.join("<br>") + ("<br>Service provided by: " + os.hostname()));			
+			callback(null, digests.join("<br>") + ("<hr>  <br>Service provided by: " + os.hostname()));			
 		};
 	} else {
 		callback("no algoritms set");			
