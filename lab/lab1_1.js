@@ -1,3 +1,4 @@
+var os = require("os");
 var hash = require("../helpers").hash;
 var async = require("async");
 
@@ -42,7 +43,7 @@ var task =  function(request, callback){
 							
 		}
 		queueForAlgorithms.drain = function(){		
-			callback(null, digests.join("<br>"));			
+			callback(null, digests.join("<br>") + ("<br>Service provided by: " + os.hostname()));			
 		};
 	} else {
 		callback("no algoritms set");			
