@@ -2,18 +2,24 @@ var os = require("os");
 var hash = require("../helpers").hash;
 var async = require("async");
 
+
+
 var digest = function(method, doc, loopCount, callback) {
 		console.log("processing " + method);
 		console.time(method);
-		var taskArray = [];
-								
-		for(var j = 0; j < loopCount -1 ; j++){		
-			hash(method, doc);
+
+		var i = 0;	
+		var hashCallback = function() {
+			 hash(method, doc);
+			 if(i++ < loopCount)
+			 	setImmediate(hashCallback);
+			 else
+				process.nextTick(function(){
+					callback(null, hash(method, doc));
+					console.timeEnd(method);
+				});	 	
 		}
-		var digestValue = hash(method, doc);
-		var digest =  method + ": " + digestValue;
-		console.timeEnd(method);
-		callback(null, digest);		
+		hashCallback();	
 }
 
 var task =  function(request, callback){
@@ -24,7 +30,7 @@ var task =  function(request, callback){
 	var digests = [];
 	
 	if(algorithms.length > 0) {
-		if(loopCount > 1000000) loopCount = 100000;
+		if(loopCount > 1000000) loopCount = 1000000;
 		console.log("request: algoritms: " + algorithms.join(', ') + "; loop: " + loopCount);
 		var queueForAlgorithms = async.queue(function(method, callback){
 				digest(method, doc, loopCount, callback);
