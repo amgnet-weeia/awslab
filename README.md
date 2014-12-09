@@ -1,4 +1,4 @@
-awslab2
+awslab
 ======
 
 # 1. Opis
